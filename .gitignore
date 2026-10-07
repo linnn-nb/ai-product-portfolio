@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+*.log
+
+# Local research, evidence and editor instructions are kept on this computer.
+design/
+design-qa.md
+AGENTS.md
+deployment-record.md
+
+# The published illustrations use WebP; keep large source renders locally.
+public/assets/sound-reel.png
+public/assets/studio-sketch.png
