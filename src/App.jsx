@@ -4,8 +4,8 @@ import { CaseStudy } from './CaseStudy';
 import { sitePath, routePath } from './paths.mjs';
 
 export const projects = [
-  { id: 'forgeax', number: '01', name: 'ForgeaX', subtitle: '音频插件 · 声音工坊', title: '从一个声音，到一个能响起来的游戏。', summary: '把生成、试听、调音与游戏接入，组织成创作者和 AI 共用的工作流。', image: sitePath('/assets/forgeax-workbench.webp'), theme: 'sage', role: '开源共建 / 产品设计与工作流实现', status: '交付候选版 · 已有功能验证', tags: ['AI 工作流', '人机协作', '游戏音频'] },
-  { id: 'forma', number: '02', name: 'Forma Studio', subtitle: 'AI 原生数字音频工作站', title: '让 AI 进入工程，也让创作者握住控制权。', summary: '设计基于真实工程的 Agent 操作，让每次变更都能审阅、试听和撤销。', image: sitePath('/assets/forma-edit.webp'), theme: 'lilac', role: '个人项目 / 产品定义与 AI 辅助开发', status: '早期开发 · M0 可行性通过', tags: ['AI Native', '复杂工具', '可审阅操作'] },
+  { id: 'forgeax', number: '01', name: 'ForgeaX', subtitle: '音频插件 · 声音工坊', title: '面向游戏创作者的 AI 音频制作与接入插件。', summary: '把声音生成、试听调整、素材管理与游戏事件绑定串在一起，解决拿到音频后仍需跨工具完成游戏接入的问题。', outcome: '交付声音工作台与独立 CLI 候选包，验证真实 BGM 在游戏中触发、循环与停止。', image: sitePath('/assets/forgeax-workbench.webp'), theme: 'sage', role: '开源共建 / 产品设计与工作流实现', status: '交付候选版 · 技术交付验证通过', tags: ['AI 工作流', '人机协作', '游戏音频'] },
+  { id: 'forma', number: '02', name: 'Forma Studio', subtitle: 'AI 原生数字音频工作站', title: '让音乐创作者与 AI 共用真实工程的音频工作站。', summary: '把 AI 的编辑建议变成可预览、确认和撤销的工程操作，让创作者看清改动并保持控制。', outcome: '做出可运行的原生 DAW 原型，完成导入、播放、编辑撤销与 WAV 导出验证。', image: sitePath('/assets/forma-edit.webp'), theme: 'lilac', role: '个人项目 / 产品定义与 AI 辅助开发', status: '早期开发 · M0 可行性通过', tags: ['AI Native', '复杂工具', '可审阅操作'] },
 ];
 
 function Header({ home }) {
@@ -61,7 +61,7 @@ function SelectedWorks() {
     <div className="section-heading reveal"><div><p className="eyebrow">SELECTED WORK / 2026</p><h2 id="works-title">想法，<span>落进真实工程。</span></h2></div><p className="section-index"><strong>02</strong><span>PROJECTS</span></p></div>
     <div className="work-reel reveal">
       <div className="work-detail" key={p.id}>
-        <p className="eyebrow">{p.number} / {p.subtitle}</p><h3>{p.name}</h3><p className="work-line">{p.title}</p><p className="work-summary">{p.summary}</p><div className="project-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div>
+        <p className="eyebrow">{p.number} / {p.subtitle}</p><h3>{p.name}</h3><p className="work-line">{p.title}</p><p className="work-summary">{p.summary}</p><p className="work-result"><span>已交付成果</span>{p.outcome}</p><div className="project-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div>
         <a className="text-link" href={sitePath(`/work/${p.id}`)}>进入产品案例 <ArrowUpRight size={28} /></a>
       </div>
       <div className={`reel-stage ${p.theme}`}>
